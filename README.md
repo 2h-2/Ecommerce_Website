@@ -50,7 +50,7 @@ Clone the repository:
 sh
 Copy
 Edit
-git clone https://github.com/your-repo/ecommerce.git
+git clone https://github.com/2h-2/Ecommerce_Website.git
 cd ecommerce/backend
 Set up the database:
 Create a MySQL database:
