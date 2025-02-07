@@ -5,6 +5,8 @@ A full-stack e-commerce platform built with Spring Boot (backend) and Angular (f
 
 ![Image](https://github.com/user-attachments/assets/f130afe7-3163-47af-a1f2-bd52fbe3ce11)
 
+![Image](https://github.com/user-attachments/assets/1f9b7556-b22a-4f9d-b836-97729f03275d)
+
 ![Image](https://github.com/user-attachments/assets/1f090c09-0338-4c8a-b725-2a76890b6f86)
 
 ![Image](https://github.com/user-attachments/assets/b811f27f-f629-4f7c-b10c-3ca09f5f0669)
@@ -24,6 +26,9 @@ A full-stack e-commerce platform built with Spring Boot (backend) and Angular (f
 ![Image](https://github.com/user-attachments/assets/d2dd11fa-c68e-4936-b36c-26b36bd0fd5d)
 
 ![Image](https://github.com/user-attachments/assets/9d6fa765-0d4a-40dc-a581-8764a44754d2)
+
+![Image](https://github.com/user-attachments/assets/852cffc2-89ba-4457-8d82-af1c70840f0f)
+
 
 📌 Features
 
