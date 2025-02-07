@@ -1,0 +1,40 @@
+<h1 align="center" class="display-4 mb-5"></h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Color</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub-Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cartItem of cartItems">
+            <td class="align-middle" [routerLink]="['/product', cartItem.productId]" style="cursor: pointer;">{{ cartItem.productName }}</td>
+            <td class="align-middle" [routerLink]="['/product', cartItem.productId]" style="cursor: pointer;">{{ cartItem.color }}</td>
+            <td class="align-middle" [routerLink]="['/product', cartItem.productId]" style="cursor: pointer;">{{ cartItem.size }}</td>
+            <td class="align-middle" [routerLink]="['/product', cartItem.productId]" style="cursor: pointer;">${{ cartItem.price }}</td>
+            <td class="align-middle" [routerLink]="['/product', cartItem.productId]" style="cursor: pointer;">x{{ cartItem.quantity }}</td>
+            <td class="align-middle" [routerLink]="['/product', cartItem.productId]" style="cursor: pointer;">${{ cartItem.subTotal }}</td>
+            <td class="align-middle">
+              <button class="btn btn-danger" (click)="removeCartItem(cartItem.productId); false">X</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-end">
+        <p>Total Price: ${{ totalPrice.toFixed(2) }}</p>
+      </div>
+      <div class="d-flex justify-content-end">
+        <a class="btn btn-primary" routerLink="/payment"  [queryParams]="{ total: totalPrice }">Check Out</a>
+      </div>
+    </div>
+  </div>
+</div>

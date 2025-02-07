@@ -1,0 +1,35 @@
+.container {
+  max-width: 800px;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.card-header {
+  border-radius: 12px 12px 0 0;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-checkbox {
+  display: inline-block;
+}
+.container {
+  max-width: 800px;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.card-header {
+  border-radius: 12px 12px 0 0;
+}
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+}

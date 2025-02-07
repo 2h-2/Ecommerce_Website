@@ -1,0 +1,137 @@
+.payment-page {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.payment-form {
+  flex: 2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.order-summary {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button.pay-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button.pay-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  border-top: 2px solid #333;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.summary-total span:last-child {
+  color: #28a745; /* Highlight total in green */
+}
+
+.order-summary {
+  flex: 1;
+  padding: 15px; /* Reduce padding */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+
+  position: sticky;
+  top: 60px;
+}
+
+.order-summary h2 {
+  font-size: 18px; /* Smaller heading size */
+  margin-bottom: 10px; /* Less margin below the heading */
+}
+
+.summary-item,
+.summary-total {
+  font-size: 14px; /* Decrease text size */
+  margin-bottom: 8px; /* Reduce spacing between items */
+}
+
+.summary-total {
+  margin-top: 10px; /* Less margin above total */
+  padding-top: 8px; /* Decrease padding at the top */
+  border-top: 1px solid #ccc; /* Lighter border for reduced visual weight */
+}
+
+.summary-total span:last-child {
+  font-size: 16px; /* Slightly larger for emphasis */
+  color: #28a745; /* Green for the total */
+}
+.order-summary {
+  max-height: 300px; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+select:focus {
+  outline: none;
+  border-color: #28a745;
+}
+

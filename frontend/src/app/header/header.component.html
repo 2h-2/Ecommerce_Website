@@ -1,0 +1,163 @@
+<nav class="navbar navbar-dark  fixed-top custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Fiora Store</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasDarkNavbar"
+      aria-controls="offcanvasDarkNavbar"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="offcanvas offcanvas-end text-bg-dark"
+      tabindex="-1"
+      id="offcanvasDarkNavbar"
+      aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+  
+          <!-- If not logged in -->
+          <ng-container *ngIf="!isLoggedIn">
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="register" data-bs-dismiss="offcanvas">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="login" data-bs-dismiss="offcanvas">Login</a>
+            </li>
+          </ng-container>
+          <!-- If logged in -->
+          <ng-container *ngIf="isLoggedIn">
+            <li class="nav-item" data-bs-dismiss="offcanvas">
+              <app-cart></app-cart>
+            </li>
+            <li class="nav-item" *ngIf="userDetails?.role === 'USER'">
+              <a class="nav-link active" routerLink="order" data-bs-dismiss="offcanvas">Orders</a>
+            </li>
+            <li class="nav-item" *ngIf="userDetails?.role === 'ADMIN'">
+              <a class="nav-link active" routerLink="admin" data-bs-dismiss="offcanvas">Admin Panel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="search">
+                <i class="bi bi-search"></i> Search
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="user" data-bs-dismiss="offcanvas">{{ userDetails?.email }}</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link active" (click)="logout()" data-bs-dismiss="offcanvas">Logout</a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Expanded Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top custom-navbar " style="padding: 0;">
+  
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="assets/WhatsApp Image 2025-02-05 at 20.23.13_8fc175ca.jpg" alt="Logo" style="width: 130px; height: 70px;">
+    </a>
+  
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Right-aligned navbar items -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+
+        <!-- Navbar Links -->
+
+        <!-- Conditional Links: If not logged in -->
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link active" routerLink="register">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link active" routerLink="login">Login</a>
+        </li>
+
+        <!-- Conditional Links: If logged in -->
+        <ng-container *ngIf="isLoggedIn">
+          <li class="nav-item" *ngIf="userDetails?.role !== 'ADMIN'">
+            <app-cart></app-cart>
+          </li>
+          <li class="nav-item" *ngIf="userDetails?.role === 'ADMIN'">
+            <a class="nav-link active" routerLink="admin/product">Product</a>
+          </li>
+          <li class="nav-item" *ngIf="userDetails?.role === 'ADMIN'">
+            <a class="nav-link active" routerLink="admin/category">Category</a>
+          </li>
+          <li class="nav-item" *ngIf="userDetails?.role === 'USER'">
+            <a class="nav-link active" routerLink="order">Orders</a>
+          </li>
+          <li class="nav-item" *ngIf="userDetails?.role === 'ADMIN'">
+            <a class="nav-link active" routerLink="admin/order">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="search">
+              <i class="bi bi-search"></i> Search
+            </a>
+          </li>
+          <!-- User Dropdown -->
+          <li class="nav-item" >
+            <a
+              class="nav-link active"
+              id="dropdownMenu"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              {{ userDetails?.role === 'ADMIN' ? 'Admin' : (userDetails?.email || 'Guest') }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" (click)="logout()" routerLink="login" data-bs-dismiss="offcanvas">Logout</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--
+<li class="nav-item d-flex align-items-center">
+          <div class="w-100" >
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search products by title..."
+              [(ngModel)]="searchQuery"
+              (input)="filterProducts()"
+            />
+          </div>
+        </li>
+
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu">
+              <li routerLinkActive="active">
+                <a class="dropdown-item" routerLink="user">Account Settings</a>
+              </li>
+              
+            </ul>
+-->

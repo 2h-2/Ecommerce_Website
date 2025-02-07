@@ -1,0 +1,51 @@
+<h1 align="center" class="display-4 mb-5">Orders</h1>
+
+<table class="table table-striped text-center">
+    <thead>
+    <tr>
+        <th scope="col">Order #</th>
+        <th scope="col">Total</th>
+        <th scope="col">Order Date</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let order of orders">
+        <th class="align-middle" scope="row">
+            {{order.id}}
+        </th>
+
+        <td class="align-middle">{{order.orderAmount }} EGP</td>
+        <td class="align-middle">{{order.updatedAt | date}}</td>
+        <td class="align-middle"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<!--
+<div class="container text-center">
+    <h1 class="display-5">Orders</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Date Created</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>{{ order.id }}</td>
+            <td>{{ order.dateCreated }}</td>
+            <td>${{ order.total }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+-->

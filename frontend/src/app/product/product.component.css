@@ -1,0 +1,123 @@
+#productHeader,
+#quantity {
+    margin-bottom: 10px;
+}
+
+#productImg {
+    max-height: 100%;
+    width: 100%;
+}
+.product-page {
+    font-family: Arial, sans-serif;
+  }
+
+  .product-title {
+    font-size: 2rem;
+  }
+
+  .btn-outline-secondary.disabled {
+    pointer-events: none;
+    background-color: #f8f9fa;
+    color: #ccc;
+  }
+
+  .progress {
+    height: 8px;
+  }
+
+  .quantity-control .form-control {
+    max-width: 60px;
+  }
+
+  #color-buttons .btn {
+    margin-right: 10px;
+
+}
+.btn-link {
+  text-decoration: none; /* Remove default underline for buttons */
+  position: relative; /* For positioning the underline effect */
+}
+
+.btn-link.active {
+  color: #f572a0 !important; /* Change color for active state */
+}
+
+.btn-link.active::after {
+  content: ''; /* Add an underline */
+  position: absolute;
+  bottom: -2px; /* Adjust position */
+  left: 0;
+  right: 0;
+  height: 2px; /* Underline thickness */
+  background-color: #f572a0; /* Match active color */
+}
+
+.size-btn {
+  min-width: 50px; /* Ensure consistent size for all buttons */
+  padding: 10px 15px; /* Adjust padding */
+  font-size: 16px; /* Larger font for better visibility */
+  text-transform: uppercase; /* Make text uppercase for consistency */
+  border-width: 2px; /* Add a thicker border for better visibility */
+  transition: all 0.3s ease-in-out; /* Smooth transitions for hover and active states */
+}
+
+.size-btn.active {
+  background-color: #f572a0; /* Highlight selected size */
+  color: white; /* Change text color for contrast */
+  border-color: #f572a0; /* Match border with background */
+}
+
+.size-btn:hover {
+  background-color: #f8d7da; /* Light hover effect */
+  border-color: #f572a0; /* Keep hover border consistent */
+  color: #f572a0; /* Match text color with hover effect */
+}
+
+.btn-group .btn {
+  border-radius: 8px; /* Rounded corners for buttons */
+  font-weight: 500; /* Slightly bolder text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.btn-group .btn.active {
+  background-color: #f572a0; /* Highlight active size button */
+  color: white; /* Text color for active button */
+  border-color: #f572a0; /* Match the border with background */
+}
+
+.btn-group .btn:hover {
+  background-color: #fcd4df; /* Subtle hover effect */
+  color: #f572a0; /* Hover text color */
+  border-color: #f572a0; /* Match the border */
+}
+/* Quantity button styles */
+.btn-qty {
+  width: 40px; /* Consistent size for buttons */
+  height: 40px; /* Ensure square buttons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px; /* Larger text/icon */
+  border-width: 2px; /* Thicker border */
+  transition: all 0.2s ease-in-out; /* Smooth hover and active states */
+}
+
+.btn-qty:disabled {
+  opacity: 0.6; /* Reduce opacity when disabled */
+  cursor: not-allowed; /* Add a not-allowed cursor for clarity */
+}
+
+.qty-input {
+  height: 40px; /* Match the height of buttons */
+  font-size: 16px; /* Larger font for better visibility */
+  padding: 0; /* Remove extra padding for a cleaner look */
+  border-width: 2px; /* Thicker border */
+}
+
+/* Add spacing between input and buttons */
+.input-group .mx-2 {
+  width: 60px; /* Ensure consistent width for the input */
+}
+
+
+

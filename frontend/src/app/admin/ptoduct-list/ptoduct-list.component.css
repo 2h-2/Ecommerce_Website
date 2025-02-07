@@ -1,0 +1,27 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.custom-edit-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.custom-delete-btn {
+  background-color: #ca1c1c; /* Red */
+  color: white;
+}
+input.form-control {
+  max-width: 400px;
+  margin: auto;
+}
+

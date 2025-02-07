@@ -1,0 +1,13 @@
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.carousel-item img {
+  height: 200px;
+  object-fit: cover;
+}
+img:hover {
+  cursor: pointer; /* Change cursor to pointer */
+  transform: scale(1.1); /* Slightly enlarge the image */
+}

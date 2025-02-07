@@ -1,0 +1,119 @@
+
+<div class="container mt-5">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 >Product List</h2>
+    <button class="btn btn-primary" routerLink="/admin/add-product">Add Product</button>
+  </div>
+
+  <div class="row mb-4">
+
+    <div class="col-md-6">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search products by title..."
+        [(ngModel)]="searchQuery"
+        (input)="filterProductsFun()"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <select class="form-select" [(ngModel)]="selectedCategory" (change)="filterProducts()">
+        <option value="">All Categories</option>
+        <option *ngFor="let category of categories" [value]="category.categoryName">{{ category.categoryName }}</option>
+      </select>
+    </div>
+  </div>
+
+  <table class="table table-striped table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of filteredProducts; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.unitPrice }}</td>
+        <td>{{ product.category.categoryName }}</td>
+        <td  class="d-flex">
+          <button class="btn btn-info btn-sm flex-grow-1 custom-edit-btn mx-1" routerLink="/admin/edit-product">Edit</button>
+          <button class="btn btn-danger btn-sm flex-grow-1 custom-delete-btn mx-1" (click)="deleteProduct(product)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <!-- No Products Found -->
+  <div *ngIf="filteredProducts.length === 0" class="text-center mt-3">
+    <p>No products found matching your search.</p>
+  </div>
+</div>
+
+
+<!--
+
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Admin - Product List</h2>
+
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by Product Name"
+        [(ngModel)]="searchTerm"
+        (input)="filterProducts()"
+      />
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" [(ngModel)]="selectedCategory" (change)="filterProducts()">
+        <option value="">All Categories</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+    <div class="col-md-4 text-end">
+      <button class="btn btn-primary" routerLink="/admin/add-product">Add Product</button>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filteredProducts; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.stock }}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-2" (click)="editProduct(product.id)">
+              Edit
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+-->

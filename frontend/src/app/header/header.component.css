@@ -1,0 +1,33 @@
+.dropdown-menu {
+  z-index: 1050; /* Ensure dropdown appears above other elements */
+}
+.custom-navbar {
+  background-color: #DDD0CA;  /* Change to your desired color DDD0CA*/
+}
+/* Custom Style for Navbar */
+.navbar-nav .nav-item {
+  padding: 0 15px;
+  color: black
+}
+.navbar .nav-link {
+  color: #990033 !important;
+}
+
+.navbar .nav-link:hover {
+  color: white !important; /* Optional: Add hover effect */
+}
+
+.navbar-nav .nav-link {
+  font-size: 16px;
+  color: #f4d6b3;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link.active {
+  color: #f5f7f8;
+}
+
+.navbar-nav .dropdown-menu {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+

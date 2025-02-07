@@ -1,0 +1,165 @@
+<div class="payment-page">
+  <!-- Payment Form -->
+  <div class="payment-form">
+    <h1>Secure Payment</h1>
+    <form (ngSubmit)="onSubmit()" #paymentForm="ngForm" novalidate>
+      <!-- User Details -->
+      <div class="form-section">
+        <h2>User Details</h2>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          [(ngModel)]="paymentDetails.name"
+          placeholder="Enter your full name"
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="paymentDetails.email"
+          placeholder="Enter your email address (Optional)"
+        />
+
+        <label for="name">Phone</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          [(ngModel)]="paymentDetails.phone"
+          placeholder="Enter your phone mobile"
+        />
+
+      </div>
+
+      <!-- Address Section -->
+      <div class="form-section">
+        <h2>Address</h2>
+
+        <!-- Existing Address Fields -->
+        <label for="address">Address Line 1</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          required
+          [(ngModel)]="paymentDetails.address"
+          placeholder="Street address, P.O. box, company name"
+        />
+
+        <label for="city">City</label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          required
+          [(ngModel)]="paymentDetails.city"
+          placeholder="Enter your city"
+        />
+
+        <!-- Governorate Dropdown -->
+        <label for="governorate">Governorate</label>
+        <select
+          id="governorate"
+          name="governorate"
+          required
+          [(ngModel)]="paymentDetails.governorate"
+          (change)="updateShipping()"
+        >
+          <option value="" disabled selected>Select your governorate</option>
+          <option value="Cairo">Cairo</option>
+          <option value="Giza">Giza</option>
+          <option value="Al-Menya">Al-Menya</option>
+          <option value="Other">Other Governorates</option>
+          <option value="Asiout">Asiout</option>
+          <option value="Fayom">Fayom</option>
+          <option value="Luxor & Aswan">Luxor & Aswan</option>
+        </select>
+      </div>
+
+      <!-- Card Details -->
+      <div class="form-section">
+        <h2>Card Details</h2>
+        <label for="cardNumber">Card Number</label>
+        <input
+          type="text"
+          id="cardNumber"
+          name="cardNumber"
+          maxlength="16"
+          required
+          [(ngModel)]="paymentDetails.cardNumber"
+          placeholder="1234 5678 9012 3456"
+        />
+
+        <label for="expiry">Expiry Date</label>
+        <input
+          type="month"
+          id="expiry"
+          name="expiry"
+          required
+          [(ngModel)]="paymentDetails.expiry"
+        />
+
+        <label for="cvv">CVV</label>
+        <input
+          type="password"
+          id="cvv"
+          name="cvv"
+          maxlength="3"
+          required
+          [(ngModel)]="paymentDetails.cvv"
+          placeholder="123"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="pay-button" [disabled]="!paymentForm.form.valid">
+        Pay Now
+      </button>
+    </form>
+  </div>
+
+  <!-- Order Summary -->
+  <div class="order-summary">
+    <h2>Order Summary</h2>
+    <div class="summary-item">
+      <span>Subtotal</span>
+      <span>{{subtotal}}</span>
+    </div>
+    <div class="summary-item">
+      <span>Shipping</span>
+      <span>E£{{ paymentDetails.shipping.toFixed(2) }}</span>
+    </div>
+    <div class="summary-total">
+      <span>Total</span>
+      <span>EGP E£{{ paymentDetails.total.toFixed(2) }}</span>
+    </div>
+  </div>
+
+</div>
+
+
+<!--
+
+<div class="container text-center">
+  <h1 class="display-5">Payment</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="card-element"></label>
+          <div id="card-element"></div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit Payment</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+-->

@@ -1,0 +1,111 @@
+
+<div class="container product-page mt-5">
+  <div class="row">
+    <!-- Product Images Section -->
+    <div class="col-md-6">
+      <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div *ngFor="let image of product?.images; let i = index" class="carousel-item" [class.active]="i === 0">
+            <img class="d-block w-100" [src]="'http://localhost:8080' + image.imageURL" alt="Product Image">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Details Section -->
+    <div class="col-md-6">
+      <h1 class="product-title mb-3">Stylish </h1>
+
+      <!-- Color Selection -->
+      <div class="product-color mb-2">
+        <strong>Color</strong>
+        <div id="color-buttons" class="d-flex">
+          <div *ngFor="let color of product?.colors; let i = index" class="mb-2">
+            <button
+              (click)="getSizesByColor(color.name)"
+              class="btn btn-link text-dark fw-bold px-2"
+              [class.active]="selectedColor === color"
+            >
+              {{ color.name.toUpperCase() }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Size Selection -->
+      <div class="product-size mb-4 mt-2 mb-2">
+        <strong class="d-block mb-2">Size</strong>
+        <div class="btn-group d-flex flex-wrap gap-2" role="group">
+          <div *ngFor="let size of product?.sizes; let i = index">
+            <button
+              type="button"
+              class="btn btn-outline-secondary px-3 py-2"
+              (click)="selectSize(size)"
+              [class.active]="selectedSize === size"
+            >
+              {{ size.name }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Display Stock for Selected Size -->
+
+
+      <div class="product-price mb-3 mt-4 mb-2">
+        <strong>Price:  </strong> <span>{{product?.unitPrice}} EGP</span>
+      </div>
+
+      <div class="quantity-control mb-3 mt-4">
+        <strong class="d-block mb-2">Quantity</strong>
+        <div class="input-group align-items-center w-50">
+          <button
+            class="btn btn-outline-secondary btn-qty"
+            type="button"
+            (click)="decreaseQuantity()"
+            [disabled]="quantity <= 1">
+            <i class="bi bi-dash"></i>
+          </button>
+          <input
+            type="number"
+            class="form-control text-center mx-2 qty-input"
+            id="quantity"
+            [(ngModel)]="quantity"
+            [min]="1"
+            />
+          <button
+            class="btn btn-outline-secondary btn-qty"
+            type="button"
+            (click)="increaseQuantity()"
+            >
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- Add to Cart Button -->
+      <button type="button" class="btn btn-primary w-100" id="addToCartBtn" (click)="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<!--
+<div *ngIf="selectedSize" class="product-stock mb-2 ">
+        <strong>Stock for {{ selectedSize.name }} </strong>
+
+      </div>
+<span>{{ selectedSize.stock }} in stock</span>
+        <div class="progress mt-2" style="height: 8px;">
+          <div class="progress-bar bg-warning" role="progressbar" [style.width]="(selectedSize.stock / 10) * 100 + '%'"
+               aria-valuenow="8" aria-valuemin="0" aria-valuemax="10"></div>
+        </div>
+-->
