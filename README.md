@@ -104,6 +104,6 @@ ng serve --open
 
 📩 Contact & Contributions
 
-📧 Email: your-email@example.com
+📧 Email: hasnaamohamed804@gmail.com
 
 👨‍💻 Contributions are welcome! Feel free to fork and submit PRs.
