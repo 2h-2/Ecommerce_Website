@@ -1,6 +1,7 @@
 🛍️ E-Commerce Platform
 A full-stack e-commerce platform built with Spring Boot (backend) and Angular (frontend), featuring authentication, product management, and order processing.
 
+![Image](https://github.com/user-attachments/assets/8bce6986-4b05-47cd-ab14-33fa9d5c838f)
 
 📌 Features
 
